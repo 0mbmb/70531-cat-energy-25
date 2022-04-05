@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи»
 
 * Студент: [Alexander K](https://up.htmlacademy.ru/adaptive/25/user/70531).
-* Наставник: `Захар Овчаров`.
+* Наставник: [Захар Овчаров](https://htmlacademy.ru/profile/id906939).
 
 ---
 
