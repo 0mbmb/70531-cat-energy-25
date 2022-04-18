@@ -4,20 +4,22 @@
 @use "utilities/mixins";
 
 /* Cat Energy Logo */
-.logo-graphic img {
-  @media (min-width: general.$breakpoint-tablet) {
-    width: 61px;
-    height: 50px;
+.logo-cat-energy {
+  &--text {
+    @include mixins.flex-centering();
   }
 
-  @media (min-width: general.$breakpoint-desktop) {
-    width: 71px;
-    height: 60px;
-  }
-}
+  &--graphic img {
+    @media (min-width: general.$breakpoint-tablet) {
+      width: 61px;
+      height: 50px;
+    }
 
-.logo-text {
-  @include mixins.flex-centering();
+    @media (min-width: general.$breakpoint-desktop) {
+      width: 71px;
+      height: 60px;
+    }
+  }
 
   &:hover,
   &:focus {

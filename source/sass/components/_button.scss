@@ -31,4 +31,13 @@
       width: auto;
     }
   }
+
+  &:focus,
+  &:hover {
+    background-color: colors.$button-hover;
+  }
+
+  &:active {
+    color: rgba(colors.$text-banner, 0.3);
+  }
 }

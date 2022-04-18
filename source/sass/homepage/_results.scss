@@ -125,12 +125,8 @@
   position: relative;
   top: -10px;
 
-  /* почему так? */
   width: 80px;
-  // width: 90%;
   text-align: center;
-
-  // padding: 0 3px;
 
   align-self: center;
 
@@ -139,9 +135,14 @@
   @media (min-width: general.$breakpoint-tablet) {
     font-size: 14px;
     line-height: 14px;
+    background: colors.$background-main;
 
     width: auto;
     padding: 0 7px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    background-color: colors.$background-secondary;
   }
 }
 
