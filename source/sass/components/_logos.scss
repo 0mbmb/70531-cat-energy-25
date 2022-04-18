@@ -1,0 +1,59 @@
+@use "utilities/colors";
+@use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/mixins";
+
+/* Cat Energy Logo */
+.logo-graphic img {
+  @media (min-width: general.$breakpoint-tablet) {
+    width: 61px;
+    height: 50px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    width: 71px;
+    height: 60px;
+  }
+}
+
+.logo-text {
+  @include mixins.flex-centering();
+
+  &:hover,
+  &:focus {
+    opacity: 80%;
+  }
+
+  &:active {
+    opacity: 60%;
+  }
+}
+
+/* HTML Academy Logo */
+.htmlacademy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+}
+
+.htmlacademy__text {
+  @include fonts.set-font("Arial", normal, 16px, 16px, none, none, colors.$text-main);
+
+  &:active {
+    opacity: 30%;
+  }
+}
+
+.htmlacademy__logo {
+  @include mixins.flex-centering();
+}
+
+.htmlacademy__logo:hover .htmlacademy__logo-image,
+.htmlacademy__logo:focus .htmlacademy__logo-image {
+  fill: colors.$main-color;
+}
+
+.htmlacademy__logo:active .htmlacademy__logo-image {
+  opacity: 30%;
+}

@@ -1,0 +1,122 @@
+@use "utilities/colors";
+@use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/mixins";
+
+.main-nav {
+  display: none;
+  width: 100%;
+  position: absolute;
+  /* Исправить */
+  top: 65px;
+  left: 0;
+  z-index: 10;
+
+  background-color: colors.$background-main;
+
+  &--no-js {
+    display: block;
+    position: static;
+  }
+
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: general.$breakpoint-tablet) {
+    display: block;
+    position: static;
+    width: auto;
+
+    padding: 15px 0;
+
+    background: none;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    width: (calc(general.$breakpoint-desktop / 2) - general.$padding-desktop);
+  }
+}
+
+.main-nav__list {
+  @include mixins.list-null();
+
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.main-nav__item {
+  @media (max-width: (general.$breakpoint-tablet - 1)) {
+    display: flex;
+    align-items: stretch;
+
+    height: 65px;
+    border-bottom: 1px solid colors.$border;
+
+    &:first-child {
+      border-top: 1px solid colors.$border;
+    }
+  }
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin-left: 35px;
+    min-height: 40px;
+
+    @include mixins.flex-centering();
+  }
+}
+
+.main-nav__link {
+  flex-grow: 1;
+  position: relative;
+
+  @include mixins.flex-centering();
+  @include fonts.set-font("Oswald", 500, 20px, 20px, uppercase, none, colors.$text-main);
+
+  @media (min-width: general.$breakpoint-tablet) {
+    @include fonts.set-font("Oswald", 400, 18px, 24px, uppercase, none, colors.$text-main);
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    @include fonts.set-font("Oswald", 400, 20px, 24px, uppercase, none, colors.$text-banner);
+  }
+
+  &:hover,
+  :focus {
+    opacity: 60%;
+  }
+
+  &:active {
+    opacity: 30%;
+  }
+
+  &--current {
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 100%;
+    }
+  }
+
+  &--current::after {
+    @media (min-width: general.$breakpoint-tablet) {
+      content: "";
+      height: 2px;
+      width: 100%;
+      background-color: colors.$main-color;
+      position: absolute;
+      bottom: -10px;
+    }
+
+    @media (min-width: general.$breakpoint-desktop) {
+      background-color: colors.$text-banner;
+    }
+  }
+}

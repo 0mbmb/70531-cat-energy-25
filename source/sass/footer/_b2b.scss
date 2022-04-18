@@ -1,0 +1,78 @@
+@use "utilities/fonts";
+@use "utilities/colors";
+@use "utilities/general";
+
+.b2b {
+  position: relative;
+}
+
+.b2b__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: colors.$background-main;
+
+  box-sizing: border-box;
+  min-height: 112px;
+  padding: 20px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    min-height: 200px;
+    padding: 0 70px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    min-height: 200px;
+    width: 565px;
+    box-sizing: border-box;
+    padding: 50px 80px;
+    position: absolute;
+    top: 25%;
+    left: general.$padding-desktop;
+  }
+
+  &--form-page,
+  &--catalog-page {
+    background-color: colors.$background-secondary;
+
+    @media (min-width: general.$breakpoint-desktop) {
+      background-color: colors.$background-main;
+    }
+  }
+}
+
+.b2b__heading {
+  @include fonts.set-font("Oswald", 400, 16px, 20px, uppercase, none, colors.$text-main);
+  margin: 0;
+  flex-basis: 170px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    @include fonts.set-font("Oswald", 400, 20px, 26px, uppercase, none, colors.$text-main);
+  }
+}
+
+.b2b__address {
+  @include fonts.set-font("Arial", normal, 14px, 20px, none, none, colors.$text-main);
+  margin: 0;
+  flex-basis: 160px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    @include fonts.set-font("Arial", normal, 16px, 20px, none, none, colors.$text-main);
+    text-align: right;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    @include fonts.set-font("Arial", normal, 16px, 20px, none, none, colors.$text-main);
+    text-align: left;
+  }
+}
+
+.b2b__map {
+  width: 100%;
+  height: 362px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    height: 400px;
+  }
+}

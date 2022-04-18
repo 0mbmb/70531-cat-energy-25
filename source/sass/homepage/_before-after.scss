@@ -1,0 +1,93 @@
+@use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/colors";
+
+.before-after {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  width: 280px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    width: 592px;
+  }
+}
+
+.before-after__images {
+  position: relative;
+  height: 232px;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    height: 511px;
+  }
+}
+
+.before-after__image {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: absolute;
+}
+
+.before-after__image--before {
+  background-image: url("../img/cat-before-mobile.png");
+  width: 50%;
+  background-position: left;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    background-image: url("../img/cat-before.png");
+  }
+}
+
+.before-after__image--after {
+  background-image: url("../img/cat-after-mobile.png");
+  width: 50%;
+  background-position: right;
+  right: 0;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    background-image: url("../img/cat-after.png");
+  }
+}
+
+.before-after__range {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+
+  margin-top: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin-top: 60px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    margin-top: 20px;
+  }
+}
+
+.before-after__input {
+  width: 100%;
+}
+
+.before-after__label {
+  @include fonts.set-font("Oswald", 400, 16px, 16px, uppercase, none, colors.$text-main);
+
+  @media (min-width: general.$breakpoint-tablet) {
+    @include fonts.set-font("Oswald", 400, 20px, 20px, uppercase, none, colors.$text-main);
+  }
+}

@@ -1,1 +1,31 @@
-// Начните писать стили здесь
+/* Utilities */
+@use "utilities/colors";
+@use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/mixins";
+@use "utilities/visually-hidden";
+/* Components */
+@use "components/container";
+@use "components/page-elements";
+@use "components/logos";
+@use "components/button";
+@use "header/main-header";
+@use "header/main-nav";
+@use "header/toggle";
+/* Footer */
+@use "footer/b2b";
+@use "footer/main-footer";
+@use "footer/social";
+/* Homepage */
+@use "homepage/programmes";
+@use "homepage/programme";
+@use "homepage/how-it-works";
+@use "homepage/results";
+@use "homepage/before-after";
+/* Form page */
+// @use "page-form/form";
+// @use "page-form/form-page";
+// @use "page-form/custom-label";
+/* Catalog page */
+// @use "page-catalog/catalog";
+// @use "page-catalog/product";

@@ -1,0 +1,21 @@
+@use "utilities/general";
+
+.container {
+  padding-left: general.$padding-mobile;
+  padding-right: general.$padding-mobile;
+  // margin: 0 auto;
+  @media (min-width: general.$breakpoint-tablet) {
+    padding-left: general.$padding-tablet;
+    padding-right: general.$padding-tablet;
+
+    &--form-page {
+      padding-left: general.$padding-tablet + general.$padding-form-tablet;
+      padding-right: general.$padding-tablet + general.$padding-form-tablet;
+    }
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    padding-left: general.$padding-desktop;
+    padding-right: general.$padding-desktop;
+  }
+}

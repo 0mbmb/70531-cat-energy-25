@@ -1,0 +1,159 @@
+@use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/colors";
+
+.programme {
+  background-color: colors.$background-secondary;
+
+  padding: 20px 20px 0 20px;
+
+  @media (min-width: general.$breakpoint-tablet) and (max-width: (general.$breakpoint-desktop - 1)) {
+    padding: 75px 0 60px 50px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &::before {
+      content: "";
+      grid-column: 2 / -1;
+      grid-row: 1 / 4;
+
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--weight-loss::before {
+      background-image: url("../img/programmes-weight-loss.svg");
+      background-size: 200px 211px;
+    }
+
+    &--mass-gain::before {
+      background-image: url("../img/programmes-mass-gain.svg");
+      background-size: 268px 200px;
+    }
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    padding: 45px 50px 58px 50px;
+  }
+}
+
+.programme__heading {
+  @include fonts.set-font("Oswald", 400, 24px, 24px, uppercase, none, colors.$text-main);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin: 0;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    @include fonts.set-font("Oswald", 400, 36px, 36px, uppercase, none, colors.$text-main);
+  }
+
+  &::before {
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-shrink: 0;
+
+    margin-right: 15px;
+
+    @media (min-width: general.$breakpoint-tablet) {
+      display: none;
+    }
+
+    @media (min-width: general.$breakpoint-desktop) {
+      display: inherit;
+      margin-right: 50px;
+    }
+  }
+
+  &--weight-loss::before {
+    background-image: url("../img/programmes-weight-loss.svg");
+    width: 50px;
+    height: 53px;
+
+    @media (min-width: general.$breakpoint-desktop) {
+      width: 100px;
+      height: 106px;
+    }
+  }
+
+  &--mass-gain::before {
+    background-image: url("../img/programmes-mass-gain.svg");
+    width: 67px;
+    height: 50px;
+
+    @media (min-width: general.$breakpoint-desktop) {
+      width: 134px;
+      height: 100px;
+    }
+  }
+}
+
+.programme__description {
+  margin: 21px 0;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin: 25px 0 60px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    margin: 43px 0 30px 0;
+  }
+}
+
+.programme__link-wrapper {
+  min-height: 57px;
+  border-top: 1px solid colors.$border;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    border: none;
+    min-height: inherit;
+  }
+}
+
+.programme__link {
+  @include fonts.set-font("Oswald", 400, 16px, 16px, uppercase, none, colors.$text-main);
+
+  @media (min-width: general.$breakpoint-tablet) {
+    @include fonts.set-font("Oswald", 400, 20px, 20px, uppercase, none, colors.$text-main);
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &::before {
+    content: "";
+    width: 17px;
+    height: 2px;
+    background-color: colors.$text-main;
+    margin-left: 15px;
+    order: 1;
+  }
+
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid colors.$text-main;
+    order: 2;
+  }
+
+  &:hover::before {
+    width: 23px;
+  }
+
+  &:active {
+    opacity: 30%;
+  }
+}

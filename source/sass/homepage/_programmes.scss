@@ -1,0 +1,26 @@
+// @use "utilities/colors";
+// @use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/mixins";
+
+.programmes {
+  @media (min-width: general.$breakpoint-desktop) {
+    padding-bottom: 30px;
+  }
+}
+
+.programmes__list {
+  @include mixins.list-null();
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    grid-gap: 30px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 80px;
+  }
+}

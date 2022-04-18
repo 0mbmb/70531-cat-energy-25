@@ -1,0 +1,117 @@
+@use "utilities/colors";
+@use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/mixins";
+
+.how-it-works__container {
+  padding-bottom: 50px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    padding-bottom: 100px;
+    border-bottom: 1px solid colors.$border;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    border: none;
+  }
+}
+
+.how-it-works__heading {
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin-top: 40px;
+    margin-bottom: 70px;
+  }
+}
+
+.how-it-works__list {
+  @include mixins.list-null();
+  display: grid;
+  gap: 20px;
+  margin: 0;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 135px;
+    grid-column-gap: 55px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 80px;
+  }
+}
+
+.how-it-works__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+  position: relative;
+
+  counter-increment: step-counter;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    display: block;
+    width: 230px;
+  }
+}
+
+@media (min-width: general.$breakpoint-tablet) {
+  .how-it-works__item::after {
+    content: counter(step-counter);
+
+    @include fonts.set-font("Oswald", 400, 280px, 10px, none, none, colors.$background-secondary);
+    position: absolute;
+    left: 50%;
+    top: 97px;
+
+    z-index: -1;
+  }
+}
+
+.how-it-works__item::before {
+  content: "";
+
+  flex-shrink: 0;
+
+  width: 60px;
+  height: 60px;
+  background-color: colors.$main-color;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    display: block;
+    margin-bottom: 30px;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.how-it-works__item--organic::before {
+  background-image: url("../img/how-it-works-organic.svg");
+}
+
+.how-it-works__item--powder::before {
+  background-image: url("../img/how-it-works-powder.svg");
+}
+
+.how-it-works__item--functional::before {
+  background-image: url("../img/how-it-works-functional.svg");
+}
+
+.how-it-works__item--month::before {
+  background-image: url("../img/how-it-works-month.svg");
+}
+
+.how-it-works__description {
+  margin: 0;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    @include fonts.set-font("Arial", normal, 16px, 24px, none, none, colors.$text-main);
+  }
+}

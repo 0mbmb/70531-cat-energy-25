@@ -1,0 +1,34 @@
+@use "utilities/colors";
+@use "utilities/general";
+@use "utilities/fonts";
+
+.main-button {
+  @include fonts.set-font("Oswald", 400, 14px, 14px, uppercase, none, colors.$text-banner);
+  border: none;
+  background-color: colors.$main-color;
+  padding: 13px 20px;
+  text-align: center;
+  align-self: center;
+
+  cursor: pointer;
+
+  &--form-submit {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &--main-banner {
+    width: 100%;
+  }
+
+  @media (min-width: general.$breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 17px 28px;
+
+    &--main-banner {
+      z-index: 10;
+      width: auto;
+    }
+  }
+}

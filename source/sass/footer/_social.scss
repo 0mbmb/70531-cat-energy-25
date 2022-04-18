@@ -1,0 +1,31 @@
+@use "utilities/colors";
+// @use "utilities/fonts";
+// @use "utilities/general";
+@use "utilities/mixins";
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social__link {
+  width: 28px;
+  height: 22px;
+
+  @include mixins.flex-centering();
+
+  margin-left: 24px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.social__link:hover .social__image,
+.social__link:focus .social__image {
+  fill: colors.$main-color;
+}
+
+.social__link:active .social__image {
+  opacity: 30%;
+}

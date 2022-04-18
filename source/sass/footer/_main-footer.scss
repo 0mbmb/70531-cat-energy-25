@@ -1,0 +1,48 @@
+@use "utilities/colors";
+@use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/mixins";
+
+.main-footer {
+  background-color: colors.$background-secondary;
+}
+
+.main-footer__contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    flex-direction: row;
+    align-items: center;
+    min-height: 149px;
+  }
+}
+
+.main-footer__logo {
+  min-height: 95px;
+
+  @include mixins.flex-centering;
+  border-bottom: 1px solid colors.$border;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    border: none;
+    min-height: inherit;
+  }
+}
+
+/* Social links */
+.main-footer__social {
+  margin: 20px auto;
+}
+
+.main-footer__htmlacademy {
+  border-top: 1px solid colors.$border;
+  min-height: 78px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    border: none;
+    min-height: inherit;
+  }
+}

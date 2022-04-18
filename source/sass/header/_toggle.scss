@@ -1,0 +1,49 @@
+@use "utilities/colors";
+
+.toggle {
+  height: 18px;
+  width: 24px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+}
+
+.toggle__icon {
+  display: block;
+  background-color: colors.$text-main;
+  height: 2px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    height: 2px;
+    width: 24px;
+    position: absolute;
+    left: 0;
+    background-color: colors.$text-main;
+  }
+
+  &::before {
+    top: -8px;
+  }
+
+  &::after {
+    top: 8px;
+  }
+
+  &--close {
+    background: none;
+
+    &::before {
+      transform: rotate(45deg);
+      top: auto;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      top: auto;
+    }
+  }
+}

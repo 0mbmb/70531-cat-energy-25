@@ -1,0 +1,46 @@
+@use "utilities/colors";
+@use "utilities/general";
+@use "utilities/fonts";
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page__body {
+  min-width: 320px;
+  min-height: 100%;
+
+  margin: 0 auto;
+
+  background-color: colors.$background-main;
+
+  @include fonts.set-font("Arial", normal, 14px, 18px, none, none, colors.$text-main);
+
+  @media (min-width: general.$breakpoint-tablet) {
+    @include fonts.set-font("Arial", normal, 16px, 24px, none, none, colors.$text-main);
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    /* изменить? */
+    width: general.$breakpoint-desktop;
+  }
+}
+
+.section-heading {
+  @include fonts.set-font("Oswald", 400, 36px, 40px, none, none, colors.$text-main);
+
+  @media (min-width: general.$breakpoint-tablet) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+.section-description {
+  @include fonts.set-font("Oswald", 400, 14px, 18px, uppercase, none, colors.$text-main);
+
+  @media (min-width: general.$breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}

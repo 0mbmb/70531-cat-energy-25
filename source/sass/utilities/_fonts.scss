@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
+
+@mixin set-font(
+  $font-family: Arial,
+  $font-weight: normal,
+  $font-size: 14px,
+  $line-height: 18px,
+  $text-transform: none,
+  $text-decoration: none,
+  $color: #000000
+) {
+  font-family: $font-family, "Arial", sans-serif;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  text-transform: $text-transform;
+  text-decoration: $text-decoration;
+  color: $color;
+}
