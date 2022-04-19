@@ -1,0 +1,77 @@
+// @use "utilities/fonts";
+@use "utilities/general";
+// @use "utilities/colors";
+@use "utilities/mixins";
+
+.catalog-page__heading {
+  margin-bottom: 40px;
+
+  @media (min-width: general.$breakpoint-desktop) {
+    margin-top: 20px;
+  }
+}
+
+.catalog__list {
+  @include mixins.list-null();
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 60px;
+    grid-row-gap: 20px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 80px;
+    grid-row-gap: 35px;
+  }
+}
+
+.catalog-additional {
+  @media (min-width: general.$breakpoint-desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 80px;
+
+    padding-bottom: 85px;
+  }
+}
+
+.catalog-additional__heading {
+  @media (min-width: general.$breakpoint-tablet) {
+    margin-top: 70px;
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+}
+
+.catalog-additional__list {
+  @include mixins.list-null();
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: general.$breakpoint-desktop) {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+}
+
+.catalog-additional__promo {
+  margin: 35px 0;
+
+  @media (min-width: general.$breakpoint-tablet) and (max-width: (general.$breakpoint-desktop - 1)) {
+    margin: 70px 0;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    margin: 0;
+  }
+}

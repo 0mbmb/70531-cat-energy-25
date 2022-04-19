@@ -40,6 +40,7 @@
   }
 }
 
+/* Удалить. Есть в компонентах */
 .fieldset__legend {
   @include fonts.set-font("Oswald", 400, 24px, 26px, none, none, colors.$text-main);
 

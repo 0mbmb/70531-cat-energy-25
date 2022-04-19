@@ -12,6 +12,15 @@
 
   cursor: pointer;
 
+  &:focus,
+  &:hover {
+    background-color: colors.$button-hover;
+  }
+
+  &:active {
+    color: rgba(colors.$text-banner, 0.3);
+  }
+
   &--form-submit {
     font-size: 16px;
     line-height: 20px;
@@ -20,6 +29,25 @@
 
   &--main-banner {
     width: 100%;
+  }
+
+  &--product {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  &--show-more {
+    background-color: colors.$button-show-more;
+    color: colors.$text-main;
+
+    &:hover,
+    &:focus {
+      background-color: colors.$button-show-more-hover;
+    }
+
+    &:active {
+      color: rgba(colors.$text-main, 0.3);
+    }
   }
 
   @media (min-width: general.$breakpoint-tablet) {
@@ -31,14 +59,12 @@
       z-index: 10;
       width: auto;
     }
-  }
 
-  &:focus,
-  &:hover {
-    background-color: colors.$button-hover;
-  }
-
-  &:active {
-    color: rgba(colors.$text-banner, 0.3);
+    &--product {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 11px 20px;
+      width: 100%;
+    }
   }
 }

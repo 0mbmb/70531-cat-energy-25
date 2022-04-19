@@ -1,0 +1,231 @@
+@use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/colors";
+@use "utilities/mixins";
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+
+  border-top: 1px solid colors.$border;
+
+  padding: 20px 0 23px 0;
+  box-sizing: border-box;
+
+  &:last-child {
+    border-bottom: 1px solid colors.$border;
+  }
+
+  &--show-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (min-width: general.$breakpoint-tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    border: none;
+
+    padding: 39px 38px;
+
+    &:last-child {
+      border: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: colors.$background-secondary;
+      bottom: 0;
+      left: 0;
+      height: 80%;
+      width: 100%;
+      z-index: -10;
+    }
+
+    &--show-more::before {
+      background: none;
+      border: 1px solid colors.$background-secondary;
+    }
+  }
+}
+
+.product__image-wrapper {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+
+  @include mixins.flex-centering();
+
+  &--show-more {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    position: relative;
+  }
+
+  &--show-more::before,
+  &--show-more::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: colors.$border;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+
+  @media (min-width: general.$breakpoint-tablet) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    margin-top: auto;
+
+    &--show-more {
+      width: 60px;
+      height: 60px;
+
+      align-self: center;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &--show-more::after {
+    transform: rotate(90deg);
+  }
+}
+
+.product__heading {
+  @include fonts.set-font("Oswald", 400, 16px, 20px, uppercase, none, colors.$text-main);
+  width: 80px;
+
+  margin: 0;
+  align-self: center;
+
+  grid-column: 2 / -1;
+  grid-row: 1 / 2;
+
+  &--show-more {
+    width: auto;
+    margin-top: 30px;
+  }
+
+  @media (min-width: general.$breakpoint-tablet) {
+    width: 150px;
+    font-size: 20px;
+    line-height: 24px;
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+}
+
+.product__info {
+  margin-top: 15px;
+
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+  // align-self: center;
+
+  // align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    min-height: 95px;
+    // align-self: stretch;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-start;
+    // align-items: stretch;
+  }
+}
+
+.product__description {
+  @include fonts.set-font("Arial", normal, 12px, 16px, none, none, colors.$text-main);
+
+  text-align: center;
+
+  // margin: 10px 0 0 0;
+  margin: 0;
+
+  align-self: center;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    font-size: 16px;
+    line-height: 18px;
+    width: 170px;
+    padding-top: 7px;
+  }
+}
+
+.product__properties {
+  // grid-column: 2 / -1;
+  // grid-row: 2 / 3;
+  // align-self: center;
+
+  border-spacing: 0;
+
+  // margin-top: 15px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+
+    width: 100%;
+    // align-self: stretch;
+  }
+}
+
+.product__property {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include fonts.set-font("Arial", normal, 12px, 16px, none, none, colors.$text-main);
+
+  @media (min-width: general.$breakpoint-tablet) {
+    font-size: 16px;
+    padding: 7px 0;
+
+    border-bottom: 1px solid colors.$border;
+  }
+}
+
+.product__property-header,
+.product__property-value {
+  font-weight: normal;
+  padding: 0;
+}
+
+
+.product__button {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  height: auto;
+
+  margin-top: 20px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+
+    margin-top: 35px;
+  }
+
+  &--show-more {
+    align-self: stretch;
+  }
+}

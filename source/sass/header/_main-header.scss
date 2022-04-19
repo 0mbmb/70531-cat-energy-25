@@ -36,21 +36,14 @@
   }
 }
 
-.main-header--form-page {
+.main-header--form-page,
+.main-header--catalog-page {
   min-height: inherit;
   background: none;
   border-bottom: 1px solid colors.$border;
 
   @media (min-width: general.$breakpoint-tablet) {
     border: none;
-  }
-}
-
-.main-header--catalog-page {
-  min-height: inherit;
-
-  &::before {
-    display: none;
   }
 }
 

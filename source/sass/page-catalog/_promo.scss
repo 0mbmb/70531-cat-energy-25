@@ -1,0 +1,48 @@
+// @use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/colors";
+// @use "utilities/mixins";
+
+.promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  min-height: 290px;
+  background-color: colors.$main-color;
+  background-image: url("../img/catalog-promo-bg-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/catalog-promo-bg-mobile@2x.jpg");
+  }
+
+  &::before {
+    content: url("../img/catalog-promo-icon.svg");
+  }
+
+  @media (min-width: general.$breakpoint-tablet) and (max-width: (general.$breakpoint-desktop - 1)) {
+    min-height: 200px;
+    flex-direction: row;
+
+    background-image: url("../img/catalog-promo-bg-tablet.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/catalog-promo-bg-tablet@2x.jpg");
+    }
+  }
+}
+
+.promo__message {
+  color: colors.$promo-message;
+  width: 160px;
+  text-align: center;
+
+  @media (min-width: general.$breakpoint-tablet) and (max-width: (general.$breakpoint-desktop - 1)) {
+    text-align: left;
+  }
+}
+
