@@ -81,11 +81,17 @@
   @include fonts.set-font("Oswald", 500, 20px, 20px, uppercase, none, colors.$text-main);
 
   @media (min-width: general.$breakpoint-tablet) {
-    @include fonts.set-font("Oswald", 400, 18px, 24px, uppercase, none, colors.$text-main);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
   }
 
   @media (min-width: general.$breakpoint-desktop) {
-    @include fonts.set-font("Oswald", 400, 20px, 24px, uppercase, none, colors.$text-banner);
+    font-size: 18px;
+
+    &--homepage {
+      color: colors.$text-banner;
+    }
   }
 
   &:hover,
@@ -116,7 +122,13 @@
     }
 
     @media (min-width: general.$breakpoint-desktop) {
-      background-color: colors.$text-banner;
+      background-color: colors.$main-color;
     }
+  }
+}
+
+.main-nav__link--homepage.main-nav__link--current::after {
+  @media (min-width: general.$breakpoint-desktop) {
+    background-color: colors.$text-banner;
   }
 }

@@ -23,9 +23,9 @@
 @use "homepage/results";
 @use "homepage/before-after";
 /* Form page */
-// @use "page-form/form";
-// @use "page-form/form-page";
-// @use "page-form/custom-label";
+@use "page-form/form";
+@use "page-form/form-page";
+@use "page-form/custom-label";
 /* Catalog page */
 // @use "page-catalog/catalog";
 // @use "page-catalog/product";

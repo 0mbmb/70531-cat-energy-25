@@ -38,9 +38,11 @@
 
 .main-header--form-page {
   min-height: inherit;
+  background: none;
+  border-bottom: 1px solid colors.$border;
 
-  &::before {
-    display: none;
+  @media (min-width: general.$breakpoint-tablet) {
+    border: none;
   }
 }
 
