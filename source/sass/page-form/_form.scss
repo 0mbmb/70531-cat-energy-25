@@ -1,0 +1,184 @@
+@use "utilities/colors";
+@use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/mixins";
+
+.form {
+  @include fonts.set-font("Oswald", 400, 16px, 18px, uppercase, none, colors.$text-main);
+  padding-bottom: 30px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 20px;
+    padding-bottom: 70px;
+  }
+}
+
+.fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  &--goal {
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: colors.$border;
+      position: absolute;
+      left: 0;
+
+      @media (min-width: general.$breakpoint-tablet) {
+        display: none;
+      }
+    }
+
+    @media (min-width: general.$breakpoint-tablet) {
+      border: 1px solid colors.$border;
+    }
+  }
+}
+
+.fieldset__legend {
+  @include fonts.set-font("Oswald", 400, 24px, 26px, none, none, colors.$text-main);
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  // position: relative;
+
+  margin-bottom: 33px;
+
+  &::before,
+  &::after {
+    content: "";
+    height: 2px;
+    background-color: colors.$main-color;
+  }
+
+  &::after {
+    flex-grow: 1;
+    margin-left: 20px;
+    margin-right: calc(general.$padding-mobile * -1);
+  }
+
+  @media (min-width: general.$breakpoint-tablet) {
+    font-size: 36px;
+    line-height: 36px;
+
+    &::before {
+      content: "";
+      height: 2px;
+      width: general.$padding-tablet;
+      background-color: colors.$main-color;
+      position: absolute;
+      left: 0;
+    }
+
+    &::after {
+      margin-left: 40px;
+      margin-right: calc((general.$padding-tablet + general.$padding-form-tablet) * -1);
+    }
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    &::before {
+      width: general.$padding-desktop - 40px;
+    }
+
+    &::after {
+      margin-right: calc(general.$padding-desktop * -1);
+    }
+  }
+}
+
+.fieldset__list {
+  @include mixins.list-null();
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 13px;
+
+  &--cat,
+  &--contacts {
+    @media (min-width: general.$breakpoint-tablet) {
+      grid-gap: 21px;
+    }
+  }
+
+  &--contacts {
+    @media (min-width: general.$breakpoint-desktop) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 78px;
+    }
+  }
+
+  &--goal {
+    padding: 22px 0;
+
+    @media (min-width: general.$breakpoint-tablet) {
+      padding: 25px;
+    }
+  }
+
+  &--additional {
+    @media (min-width: general.$breakpoint-tablet) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 60px;
+      grid-row-gap: 35px;
+    }
+
+    @media (min-width: general.$breakpoint-desktop) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 75px;
+    }
+  }
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.field__label {
+  margin-right: 10px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin-right: 15px;
+  }
+}
+
+.field__input {
+  flex-grow: 1;
+  padding: 13px 15px;
+  text-transform: uppercase;
+  color: colors.$text-main;
+  border: 1px solid colors.$border;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border: 1px solid colors.$border;
+  text-transform: uppercase;
+
+  resize: vertical;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    min-height: 175px;
+  }
+}
+
+.form__asterisk {
+  @include fonts.set-font("Arial", normal, 14px, 16px, none, none, colors.$text-main);
+  text-align: center;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    font-size: 16px;
+    text-align: left;
+  }
+}

@@ -1,0 +1,140 @@
+// @use "utilities/fonts";
+@use "utilities/general";
+@use "utilities/colors";
+
+.form-page__heading {
+  margin-top: 20px;
+}
+
+.form-page__description {
+  margin-top: 35px;
+  margin-bottom: 40px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin-top: 50px;
+    margin-bottom: 65px;
+  }
+}
+
+.programme-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  align-items: center;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 50px;
+    grid-column-gap: 60px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    grid-gap: 70px;
+  }
+}
+
+.programme-form__cat {
+  grid-column: 1 / -1;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    grid-gap: 22px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    grid-column: 1 / 2;
+    margin: 0;
+  }
+}
+
+.programme-form__goal {
+  grid-column: 1 / -1;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin: 10px 0;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    grid-column: 2 / -1;
+    margin: 0;
+  }
+}
+
+.programme-form__contacts {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 14px;
+
+  grid-column: 1 / -1;
+
+  margin-top: 10px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin: 10px 0;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    margin: 0;
+  }
+}
+
+.programme-form__contacts-legend {
+  margin-bottom: 30px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin-bottom: 75px;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    margin-bottom: 75px;
+  }
+}
+
+.programme-form__notes {
+  grid-column: 1 / -1;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin: 10px 0;
+  }
+
+  @media (min-width: general.$breakpoint-desktop) {
+    margin: 0;
+  }
+}
+
+.programme-form__notes-legend {
+  margin-bottom: 40px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin-bottom: 75px;
+  }
+}
+
+.programme-form__additional {
+  grid-column: 1 / -1;
+}
+
+.programme-form__additional-legend {
+  margin-bottom: 35px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    margin-bottom: 55px;
+  }
+}
+
+.programme-form__submit {
+  margin-top: 15px;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    grid-column: 1 / 2;
+    margin: 0;
+  }
+}
+
+.programme-form__asterisk {
+  margin: 0;
+
+  @media (min-width: general.$breakpoint-tablet) {
+    grid-column: 2 / -1;
+  }
+}
