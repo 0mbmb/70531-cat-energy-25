@@ -47,8 +47,6 @@
   align-items: center;
   width: 100%;
 
-  // position: relative;
-
   margin-bottom: 33px;
 
   &::before,
@@ -140,6 +138,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  position: relative;
 }
 
 .field__label {
@@ -153,9 +153,41 @@
 .field__input {
   flex-grow: 1;
   padding: 13px 15px;
+  box-sizing: border-box;
   text-transform: uppercase;
   color: colors.$text-main;
-  border: 1px solid colors.$border;
+  border: 1px solid colors.$input-border;
+
+  &:hover {
+    border-color: colors.$input-border-hover;
+  }
+
+  &:focus,
+  &:active {
+    border-color: colors.$input-border-focus;
+    border-width: 2px;
+    padding: 12px 14px;
+  }
+
+  &:not(:focus):not(:placeholder-shown):invalid {
+    border-color: colors.$input-border-error;
+    border-width: 2px;
+    padding: 12px 14px;
+  }
+}
+
+.field__icon {
+  position: absolute;
+  right: 20px;
+}
+
+.field__input:focus + .field__icon,
+.field__input:active + .field__icon {
+  color: colors.$main-color;
+}
+
+.field__input:not(:focus):not(:placeholder-shown):invalid + .field__icon {
+  color: colors.$input-border-error;
 }
 
 .textarea {
@@ -170,6 +202,10 @@
 
   @media (min-width: general.$breakpoint-tablet) {
     min-height: 175px;
+  }
+
+  &:hover {
+    border-color: colors.$input-border-hover;
   }
 }
 

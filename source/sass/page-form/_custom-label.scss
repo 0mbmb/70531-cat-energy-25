@@ -15,7 +15,6 @@
     box-sizing: border-box;
     border: 1px solid colors.$border;
     left: 0;
-    top: center;
 
     width: 30px;
     height: 30px;
@@ -26,6 +25,10 @@
       height: 40px;
       margin-right: 20px;
     }
+  }
+
+  &:hover::before {
+    border-color: colors.$input-border-hover;
   }
 
   &--radio::before {
@@ -72,4 +75,8 @@
     top: 10px;
     left: 9px;
   }
+}
+
+.custom-input:disabled + .custom-label--checkbox {
+  opacity: 30%;
 }
