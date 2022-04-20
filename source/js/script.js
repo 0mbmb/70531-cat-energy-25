@@ -16,10 +16,27 @@ mainNavToggle.addEventListener('click', function (evt) {
 
 // Before - After
 var rangeInput = document.querySelector('#before-after');
+var labelBefore = document.querySelector('.before-after__label--before');
+var labelAfter = document.querySelector('.before-after__label--after');
 var imageBefore = document.querySelector('.before-after__image--before');
 var imageAfter = document.querySelector('.before-after__image--after');
 
-rangeInput.addEventListener('input', (event) => {
-  imageBefore.style.width = event.target.value + '%';
-  imageAfter.style.width = (100 - event.target.value) + '%';
+rangeInput.addEventListener('input', function(evt) {
+  imageBefore.style.width = (100 - evt.target.value) + '%';
+  imageAfter.style.width = evt.target.value + '%';
+});
+
+
+labelBefore.addEventListener('click', function(evt) {
+  rangeInput.value = 0;
+
+  imageBefore.style.width = '100%';
+  imageAfter.style.width = '0%';
+});
+
+labelAfter.addEventListener('click', function(evt) {
+  rangeInput.value = 100;
+
+  imageBefore.style.width = '0%';
+  imageAfter.style.width = '100%';
 });

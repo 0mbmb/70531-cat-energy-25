@@ -8,26 +8,17 @@
   padding: 20px 20px 0 20px;
 
   @media (min-width: general.$breakpoint-tablet) and (max-width: (general.$breakpoint-desktop - 1)) {
-    padding: 75px 0 60px 50px;
+    padding: 75px 315px 60px 50px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    background-repeat: no-repeat;
+    background-position: right 7% center;
 
-    &::before {
-      content: "";
-      grid-column: 2 / -1;
-      grid-row: 1 / 4;
-
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    &--weight-loss::before {
+    &--weight-loss {
       background-image: url("../img/programmes-weight-loss.svg");
       background-size: 200px 211px;
     }
 
-    &--mass-gain::before {
+    &--mass-gain {
       background-image: url("../img/programmes-mass-gain.svg");
       background-size: 268px 200px;
     }
@@ -48,7 +39,8 @@
   margin: 0;
 
   @media (min-width: general.$breakpoint-tablet) {
-    @include fonts.set-font("Oswald", 400, 36px, 36px, uppercase, none, colors.$text-main);
+    font-size: 36px;
+    line-height: 36px;
   }
 
   &::before {
@@ -123,7 +115,8 @@
   @include fonts.set-font("Oswald", 400, 16px, 16px, uppercase, none, colors.$text-main);
 
   @media (min-width: general.$breakpoint-tablet) {
-    @include fonts.set-font("Oswald", 400, 20px, 20px, uppercase, none, colors.$text-main);
+    font-size: 20px;
+    line-height: 20px;
   }
 
   display: flex;

@@ -11,6 +11,8 @@ img {
   min-width: 320px;
   min-height: 100%;
 
+  position: relative;
+
   margin: 0 auto;
 
   background-color: colors.$background-main;
@@ -50,7 +52,7 @@ img {
 
   display: flex;
   align-items: center;
-  width: 100%;
+  // width: 100%;
 
   margin-bottom: 33px;
 
@@ -73,9 +75,7 @@ img {
 
     &::before {
       content: "";
-      height: 2px;
       width: general.$padding-tablet;
-      background-color: colors.$main-color;
       position: absolute;
       left: 0;
     }
@@ -93,6 +93,20 @@ img {
 
     &::after {
       margin-right: calc(general.$padding-desktop * -1);
+    }
+  }
+
+  &--additional {
+    @media (min-width: general.$breakpoint-tablet) and (max-width: (general.$breakpoint-desktop - 1)) {
+      margin-left: 40px;
+
+      &::before {
+        width: general.$padding-tablet;
+      }
+
+      &::after {
+        margin-right: calc(general.$padding-tablet * -1);
+      }
     }
   }
 }
