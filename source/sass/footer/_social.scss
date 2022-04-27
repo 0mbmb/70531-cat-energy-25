@@ -1,6 +1,4 @@
 @use "utilities/colors";
-// @use "utilities/fonts";
-// @use "utilities/general";
 @use "utilities/mixins";
 
 .social {
@@ -19,6 +17,10 @@
   &:first-child {
     margin-left: 0;
   }
+}
+
+.social__image {
+  fill: colors.$social-color;
 }
 
 .social__link:hover .social__image,

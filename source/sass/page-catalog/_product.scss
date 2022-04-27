@@ -135,9 +135,7 @@
 
   grid-column: 2 / -1;
   grid-row: 2 / 3;
-  // align-self: center;
 
-  // align-self: stretch;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -145,11 +143,6 @@
 
   @media (min-width: general.$breakpoint-tablet) {
     min-height: 95px;
-    // align-self: stretch;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: flex-start;
-    // align-items: stretch;
   }
 }
 
@@ -157,8 +150,6 @@
   @include fonts.set-font("Arial", normal, 12px, 16px, none, none, colors.$text-main);
 
   text-align: center;
-
-  // margin: 10px 0 0 0;
   margin: 0;
 
   align-self: center;
@@ -172,20 +163,13 @@
 }
 
 .product__properties {
-  // grid-column: 2 / -1;
-  // grid-row: 2 / 3;
-  // align-self: center;
-
   border-spacing: 0;
-
-  // margin-top: 15px;
 
   @media (min-width: general.$breakpoint-tablet) {
     grid-column: 1 / -1;
     grid-row: 3 / 4;
 
     width: 100%;
-    // align-self: stretch;
   }
 }
 

@@ -3,7 +3,7 @@
 @use "utilities/general";
 @use "utilities/mixins";
 
-/* Cat Energy Logo */
+/* Cat Energy */
 .logo-cat-energy {
   &--text {
     @include mixins.flex-centering();
@@ -31,7 +31,7 @@
   }
 }
 
-/* HTML Academy Logo */
+/* HTML Academy */
 .htmlacademy {
   display: flex;
   justify-content: space-between;
@@ -58,4 +58,8 @@
 
 .htmlacademy__logo:active .htmlacademy__logo-image {
   opacity: 30%;
+}
+
+.htmlacademy__logo-image {
+  fill: colors.$social-color;
 }

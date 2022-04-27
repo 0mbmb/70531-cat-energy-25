@@ -48,7 +48,8 @@
   flex-basis: 170px;
 
   @media (min-width: general.$breakpoint-tablet) {
-    @include fonts.set-font("Oswald", 400, 20px, 26px, uppercase, none, colors.$text-main);
+    font-size: 20px;
+    line-height: 26px;
   }
 }
 
@@ -58,12 +59,12 @@
   flex-basis: 160px;
 
   @media (min-width: general.$breakpoint-tablet) {
-    @include fonts.set-font("Arial", normal, 16px, 20px, none, none, colors.$text-main);
+    font-size: 16px;
+    line-height: 20px;
     text-align: right;
   }
 
   @media (min-width: general.$breakpoint-desktop) {
-    @include fonts.set-font("Arial", normal, 16px, 20px, none, none, colors.$text-main);
     text-align: left;
   }
 }

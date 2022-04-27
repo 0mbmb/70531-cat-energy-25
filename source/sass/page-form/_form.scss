@@ -40,59 +40,6 @@
   }
 }
 
-/* Удалить. Есть в компонентах */
-.fieldset__legend {
-  @include fonts.set-font("Oswald", 400, 24px, 26px, none, none, colors.$text-main);
-
-  display: flex;
-  align-items: center;
-  width: 100%;
-
-  margin-bottom: 33px;
-
-  &::before,
-  &::after {
-    content: "";
-    height: 2px;
-    background-color: colors.$main-color;
-  }
-
-  &::after {
-    flex-grow: 1;
-    margin-left: 20px;
-    margin-right: calc(general.$padding-mobile * -1);
-  }
-
-  @media (min-width: general.$breakpoint-tablet) {
-    font-size: 36px;
-    line-height: 36px;
-
-    &::before {
-      content: "";
-      height: 2px;
-      width: general.$padding-tablet;
-      background-color: colors.$main-color;
-      position: absolute;
-      left: 0;
-    }
-
-    &::after {
-      margin-left: 40px;
-      margin-right: calc((general.$padding-tablet + general.$padding-form-tablet) * -1);
-    }
-  }
-
-  @media (min-width: general.$breakpoint-desktop) {
-    &::before {
-      width: general.$padding-desktop - 40px;
-    }
-
-    &::after {
-      margin-right: calc(general.$padding-desktop * -1);
-    }
-  }
-}
-
 .fieldset__list {
   @include mixins.list-null();
   display: grid;
