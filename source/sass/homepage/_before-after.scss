@@ -101,7 +101,9 @@
 .before-after__input {
   width: 86px;
   margin: 0 15px;
+  /* stylelint-disable property-no-vendor-prefix */
   -webkit-appearance: none;
+  /* stylelint-enable property-no-vendor-prefix */
   height: 8px;
   border-radius: 7px;
   border: 3px solid colors.$background-main;
@@ -121,7 +123,9 @@
 }
 
 .before-after__input::-webkit-slider-thumb {
+  /* stylelint-disable property-no-vendor-prefix */
   -webkit-appearance: none;
+  /* stylelint-enable property-no-vendor-prefix */
   width: 8px;
   height: 8px;
   border-radius: 50%;
